@@ -12,6 +12,6 @@ public class Giudice{
     public synchronized void traguardo(Auto auto){
         System.out.println("Gara terminata per " +auto.giocatore);
         posizione++;
-        classifica.add(posizione+") "+auto.giocatore);
+        classifica.add(posizione+") "+auto.giocatore +" con macchina " + auto.nomeAuto+"\n");
     }
 }
