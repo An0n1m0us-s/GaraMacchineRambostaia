@@ -18,6 +18,14 @@ public class Auto implements Runnable {
         this.g = g;
     }
 
+    /**
+     *
+     * metodo run(): usato per dare istruzioni ad un thread
+     *
+     * sleep() manda in exception un thread per un tempo
+     * specificato
+     *
+     */
     @Override
     public void run() {
         for (giroCorrente = 0; giroCorrente < giriMassimi; giroCorrente++) {

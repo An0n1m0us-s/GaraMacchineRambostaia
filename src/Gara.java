@@ -5,7 +5,6 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Gara {
-    private static final String fileName = "classifica.txt";
 
     public static void main(String[] args) {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -37,41 +36,11 @@ public class Gara {
             for (String s : g.classifica) {
                 System.out.println(s);
             }
-            leggi();
-            scrivi(g.classifica);
+            GestoreFile.leggi();
+            GestoreFile.scrivi(g.classifica);
         } catch (IOException e) {
             System.err.println("Hai sbagliato a mettere un input");
         }
 
-    }
-
-    private static synchronized void leggi() {
-        File file = new File(fileName);
-        if (!file.exists()) {
-            System.out.println("File non trovato");
-            return;
-        }
-        System.out.println("\nUltima classifica:");
-        try (BufferedReader re = new BufferedReader(new FileReader(file))) {
-            String line = "";
-            while ((line = re.readLine()) != null) {
-                System.out.println(line);
-            }
-            System.out.println("Fine della classifica precedente. \n");
-        } catch (IOException e) {
-            System.err.println("...");
-        }
-    }
-
-    private static synchronized void scrivi(ArrayList<String> classifica) {
-        try (FileWriter wr = new FileWriter(fileName)){
-            wr.write("Classifica dei passaggi\n");
-            for (String auto : classifica){
-                wr.write(auto);
-            }
-            System.out.println("Classifica salvata in "+fileName);
-        } catch (IOException e) {
-            System.err.println("...");
-        }
     }
 }
