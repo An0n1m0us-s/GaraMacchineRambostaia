@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 
+/**
+ *
+ * @author An0n1m0us-s
+ *
+ */
+
 public class Giudice{
     private int contaGiri;
     protected ArrayList<String> classifica = new ArrayList<>();
@@ -16,7 +22,7 @@ public class Giudice{
      * per indicare quando il giocatore x con auto y
      * finisce la gara e lo inserisce in classifica,
      * incrementando la posizione ad ogni auto che
-     * termina la gara.
+     * termina la gara
      *
      */
     public synchronized void traguardo(Auto auto){

@@ -37,6 +37,12 @@ public class Auto implements Runnable {
             }
         }
 
+        /**
+         * g.traguardo(this) significa che passerà
+         * al parametro il valore dell'oggetto alla
+         * fine dei giri
+         */
+
         g.traguardo(this);
     }
 

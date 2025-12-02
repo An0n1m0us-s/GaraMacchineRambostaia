@@ -23,6 +23,16 @@ public class GestoreFile {
             return;
         }
         System.out.println("\nUltima classifica:");
+
+        /**
+         * Try with resources, implica che ciò che sta fra
+         * le parentesi è la risorsa, che verra allocata
+         * all'esecuzione del try e deallocata alla fine
+         *
+         * Mentre per leggere lo stream di input si usa InputStreamReader,
+         * per leggere un file si usa new FileReader
+         */
+
         try (BufferedReader re = new BufferedReader(new FileReader(file))) {
             String line = "";
             while ((line = re.readLine()) != null) {
@@ -43,8 +53,14 @@ public class GestoreFile {
      *
      */
     public static synchronized void scrivi(ArrayList<String> classifica) {
+
+        /**
+         * FileWriter è la classe utilizzata per scrivere files
+         * (modificare, aggiungere contenuto, eliminare)
+         */
+
         try (FileWriter wr = new FileWriter(fileName)){
-            wr.write("Classifica dei passaggi\n");
+            wr.write("Classifica della Gara\n");
             for (String auto : classifica){
                 wr.write(auto);
             }
